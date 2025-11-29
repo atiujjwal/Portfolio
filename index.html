@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>atiujjwal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <div class="logo-standalone">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="uk-gradient-standalone"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop offset="0%" style="stop-color: #5fa8d3" />
+                  <stop offset="100%" style="stop-color: #e0a878" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M20 30 V60 C20 75, 35 75, 45 60 V30 M45 30 V70 M45 50 L75 30 M45 50 L75 70"
+                stroke="url(#uk-gradient-standalone)"
+                stroke-width="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span>atiUjjwal</span>
+        </div>
+        <div class="nav-right">
+          <nav>
+            <ul>
+              <li><a href="#home" class="nav-link active">Home</a></li>
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li><a href="#resume" class="nav-link">Resume</a></li>
+              <li><a href="#projects" class="nav-link">Projects</a></li>
+              <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle light/dark mode"
+          >
+            <span id="theme-icon">☾</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero reveal">
+        <div>
+          <div class="hero-greeting">Hi, I'm</div>
+          <h1 class="hero-title">
+            Ujjwal Kashyap, <span>Software Developer</span>
+          </h1>
+          <p class="hero-text">
+            I'm a Backend Software Developer specializing in Node.js, Next.js,
+            Express and scalable REST API design. I've delivered core features
+            for SaaS products like Hirezy.ai, Conversation.hirezy and Dictera,
+            implementing robust architectures, multi-tenant access controls,
+            high-performance data flows, and AI-powered automation. Passionate
+            about building reliable systems that scale with business growth.
+          </p>
+          <div class="hero-tags">
+            <div class="chip">
+              <span class="chip-dot"></span>Open to opportunities
+            </div>
+            <div class="chip">Node.js · Next.js</div>
+            <div class="chip">OpenAI · SQL · System Design</div>
+          </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a
+              href="https://drive.google.com/file/d/1zKex_l44Y2w4zsPwuVgFC2zotXTo8THV/view?usp=sharing"
+              class="btn btn-outline btn-primary"
+              target="_blank"
+              >Download Resume</a
+            >
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-orbit"></div>
+            <div class="avatar-glow"></div>
+
+            <div class="avatar-circle">
+              <img
+                src="images/avatar.png"
+                alt="ujjwal'avatar"
+                class="avatar-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="reveal">
+        <div class="section-subtitle">About</div>
+        <h2 class="section-title">Me</h2>
+        <div class="section-divider"></div>
+
+        <div class="about-grid">
+          <div>
+            <p class="about-text">
+              I'm Ujjwal Kashyap — a backend-focused software engineer currently
+              contributing to products like Hirezy.ai, Conversation.hirezy.ai
+              and Dictera at Tercera Ventures. I architect and build modular,
+              secure, and maintainable services using Node.js, Next.js, Express,
+              JavaScript, TypeScript, Drizzle ORM, and AWS services.
+            </p>
+            <p class="about-text">
+              Across multiple SaaS platforms, I've implemented high-impact
+              features including bulk processing pipelines, API unification into
+              maintainable versions, intelligent AI-driven evaluation workflows,
+              role and permission management, and workflow engines integrated
+              with external systems. My work emphasizes performance,
+              transactional safety, type-secure database operations, and
+              thoughtful error handling.
+            </p>
+            <p class="about-text">
+              Beyond my professional contributions, I enjoy solving complex
+              system design and data flow challenges, exploring DevOps
+              practices, and sharpening problem-solving through active DSA
+              practice. I'm driven to create products that feel seamless to
+              users and scalable for teams.
+            </p>
+
+            <div class="about-highlights">
+              <div class="pill">
+                <span>Languages</span>
+                <span>JavaScript, TypeScript, Python, C++</span>
+              </div>
+              <div class="pill">
+                <span>Backend</span>
+                <span>Node.js, Next.js, Express.js, Flask, REST APIs</span>
+              </div>
+              <div class="pill">
+                <span>Databases</span>
+                <span>MySQL, Postgres, MongoDB, Prisma, Drizzle</span>
+              </div>
+              <div class="pill">
+                <span>Cloud & Tools</span>
+                <span
+                  >AWS (S3, Lambda, Cloudwatch, CodeCommit), Git, GitHub,
+                  Postman</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-role">
+                Associate Software Developer · Tercera Ventures
+              </div>
+              <div class="timeline-meta">July 2024 - Present</div>
+              <div class="about-text">
+                Building core features for SaaS products like Hirezy.ai and
+                Dictera using Node.js, Express, and AWS.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-role">
+                Meta: Intro to Back-End Development
+              </div>
+              <div class="timeline-meta">Coursera Certification · May 2024</div>
+              <div class="about-text">
+                Specialized certification track focusing on server-side
+                development and APIs.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-role">DSA & Web Development</div>
+              <div class="timeline-meta">
+                Coding Ninjas Career Camp · 2023 - 2024
+              </div>
+              <div class="about-text">
+                Intensive training in Data Structures, Algorithms (Python),
+                HTML, CSS, and JavaScript.
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-role">
+                B.Tech - Computer Science & Engineering
+              </div>
+              <div class="timeline-meta">KIIT University · 2021 - 2025</div>
+              <div class="about-text">CGPA - 8.55/10</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume" class="reveal">
+        <div class="section-subtitle">Resume</div>
+        <h2 class="section-title">Experience & Skills</h2>
+        <div class="section-divider"></div>
+
+        <div class="resume-card">
+          <div>
+            <p class="resume-summary">
+              I specialize in building scalable, secure, and well-architected
+              backend systems for SaaS products. My work spans designing modular
+              REST APIs, implementing role-based access controls, optimizing
+              database performance, integrating AI-powered automation, and
+              leveraging cloud services to handle intensive workloads. I enjoy
+              solving complex engineering challenges, improving developer
+              experience, and ensuring systems are production-ready,
+              maintainable, and future-proof.
+            </p>
+            <div class="badge-row">
+              <div class="badge">Node.js</div>
+              <div class="badge">Next.js</div>
+              <div class="badge">Express.js</div>
+              <div class="badge">JavaScript</div>
+              <div class="badge">TypeScript</div>
+              <div class="badge">Python</div>
+              <div class="badge">RESTful APIs</div>
+              <div class="badge">WebSockets</div>
+              <div class="badge">Flask</div>
+              <div class="badge">FastAPI</div>
+              <div class="badge">MySQL</div>
+              <div class="badge">MongoDB</div>
+              <div class="badge">SQL Server</div>
+              <div class="badge">Prisma</div>
+              <div class="badge">AWS (S3, Lambda, CloudWatch, RDS)</div>
+              <div class="badge">Azure SQL</div>
+              <div class="badge">Drizzle ORM</div>
+              <div class="badge">CI/CD principles</div>
+              <div class="badge">Git</div>
+              <div class="badge">BitBucket</div>
+              <div class="badge">System Design</div>
+              <div class="badge">Serverless Architecture</div>
+              <div class="badge">Error Handling & Monitoring</div>
+              <div class="badge">Secure Authentication</div>
+              <div class="badge">Modular MVC Architecture</div>
+              <div class="badge">Data Migration & Schema Management</div>
+              <div class="badge">Microservices Concepts</div>
+              <div class="badge">Postman</div>
+            </div>
+          </div>
+          <div style="text-align: right">
+            <a
+              href="https://drive.google.com/file/d/1zKex_l44Y2w4zsPwuVgFC2zotXTo8THV/view?usp=sharing"
+              target="_blank"
+              class="btn btn-primary"
+              style="font-size: 0.8rem"
+            >
+              Open Resume
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal">
+        <div class="section-subtitle">Projects</div>
+        <h2 class="section-title">I've Worked on</h2>
+        <div class="section-divider"></div>
+
+        <div class="projects-grid">
+          <a
+            href="https://conversation.hirezy.ai/"
+            target="_blank"
+            class="project-card"
+            style="text-decoration: none; color: inherit; display: block"
+          >
+            <div class="project-thumb">
+              <img
+                src="images/banners/hirezy_conversation_banner.png"
+                alt="hirezy_conversation Banner"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">
+              Conversation Hirezy: AI Powered Sales training and coaching
+              platform
+            </h3>
+            <p class="project-desc">
+              I have developed and design the data management.
+            </p>
+            <div class="project-meta">
+              <div class="project-tags">
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">OpenAI</span>
+              </div>
+              <span class="project-link">Visit site →</span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.hurix.com/blogs/dictera-a-versatile-customization-friendly-ai-assessment-generator/"
+            target="_blank"
+            class="project-card"
+            style="text-decoration: none; color: inherit; display: block"
+          >
+            <div class="project-thumb">
+              <img
+                src="images/banners/dictera_banner.png"
+                alt="Dictera Banner"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">Dictera</h3>
+            <p class="project-desc">
+              Developed a bi-directional communication app using WebSockets.
+              Implemented message delivery, user authentication, and chat
+              history storage.
+            </p>
+            <div class="project-meta">
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">ORM</span>
+              </div>
+              <span class="project-link">View code →</span>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            target="_blank"
+            class="project-card"
+            style="text-decoration: none; color: inherit; display: block"
+          >
+            <div class="project-thumb">
+              <img
+                src="images/banners/hirezy_banner.png"
+                alt="Hirezy Banner"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">Hirezy.ai (SaaS Product)</h3>
+            <p class="project-desc">
+              Implemented bulk resume uploads with AWS S3, deduplication logic,
+              and AI integrations for prompt-driven tasks like MCQ generation
+              and JD extraction.
+            </p>
+            <div class="project-meta">
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">AWS S3</span>
+                <span class="project-tag">CryptoJS</span>
+              </div>
+              <span class="project-link">View details →</span>
+            </div>
+          </a>
+        </div>
+
+        <h2 class="section-title">I've built</h2>
+        <div class="section-divider"></div>
+
+        <div class="projects-grid">
+          <a
+            href="https://github.com/atiujjwal/pAIse"
+            target="_blank"
+            class="project-card"
+            style="text-decoration: none; color: inherit; display: block"
+          >
+            <div class="project-thumb">
+              <img
+                src="images/banners/pAIse_banner.png"
+                alt="pAIse Banner"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">pAIse: AI Powered Expense Sharing</h3>
+            <p class="project-desc">
+              AI-Powered Expense Sharing Platform using Next.js and SQL.
+              Features include smart splitting logic and seamless database
+              integration using Prisma.
+            </p>
+            <div class="project-meta">
+              <div class="project-tags">
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Prisma/Postgres</span>
+              </div>
+              <span class="project-link">View code →</span>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/atiujjwal/Chatgram"
+            target="_blank"
+            class="project-card"
+            style="text-decoration: none; color: inherit; display: block"
+          >
+            <div class="project-thumb">
+              <img
+                src="images/banners/chatgram_banner.png"
+                alt="ChatGram Banner"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">ChatGram</h3>
+            <p class="project-desc">
+              Developed a bi-directional communication app using WebSockets.
+              Implemented message delivery, user authentication, and chat
+              history storage.
+            </p>
+            <div class="project-meta">
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">WebSockets</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+              <span class="project-link">View code →</span>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            target="_blank"
+            class="project-card"
+            style="text-decoration: none; color: inherit; display: block"
+          >
+            <div class="project-thumb">
+              <img
+                src="images/banners/predictPath_banner.png"
+                alt="Hirezy Banner"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="project-title">TrafficTelligence</h3>
+            <p class="project-desc">
+              Predicts traffic at a certain route, taking different parameters.
+            </p>
+            <div class="project-meta">
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">AWS S3</span>
+                <span class="project-tag">CryptoJS</span>
+              </div>
+              <span class="project-link">View details →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <div class="section-subtitle">Contact</div>
+        <h2 class="section-title">Let's talk</h2>
+        <div class="section-divider"></div>
+
+        <div class="contact-grid">
+          <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="_replyto"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell me about your project, role, or idea..."
+                required
+              ></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </form>
+
+          <div class="contact-card">
+            <p>
+              Prefer email or LinkedIn? Feel free to reach out directly. I’m
+              always happy to talk about interesting projects, collaboration
+              ideas or backend architecture.
+            </p>
+
+            <div class="contact-row">
+              <span>Email</span>
+              <a href="mailto:atiujjwalkashyap@gmail.com"
+                >atiujjwalkashyap@gmail.com</a
+              >
+            </div>
+
+            <div class="contact-row">
+              <span>GitHub</span>
+              <a href="#" target="_blank"> https://github.com/atiujjwal </a>
+            </div>
+
+            <div class="contact-row">
+              <span>LinkedIn</span>
+              <a href="#" target="_blank">
+                https://www.linkedin.com/in/atiujjwal/
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <footer>© <span id="year"></span> Ujjwal Kashyap .</footer>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
