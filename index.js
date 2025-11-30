@@ -48,10 +48,10 @@ const themeIcon = document.getElementById("theme-icon");
 function applyTheme(mode) {
     if (mode === "light") {
         document.body.classList.add("light-mode");
-        themeIcon.textContent = "☀";
+       themeIcon.src = "images/dark_theme.png";
     } else {
         document.body.classList.remove("light-mode");
-        themeIcon.textContent = "☾";
+        themeIcon.src = "images/light_theme.png";
     }
 }
 
@@ -65,14 +65,50 @@ function applyTheme(mode) {
         mode = prefersLight ? "light" : "dark";
     }
     applyTheme(mode);
-    localStorage.setItem("theme", mode);
 })();
 
 themeToggleBtn.addEventListener("click", () => {
-    const current = document.body.classList.contains("light-mode")
-        ? "light"
-        : "dark";
+    const current = document.body.classList.contains("light-mode") ? "light" : "dark";
     const next = current === "light" ? "dark" : "light";
+
     applyTheme(next);
     localStorage.setItem("theme", next);
 });
+
+
+
+const form = document.getElementById("contact-form");
+
+async function handleSubmit(event) {
+    event.preventDefault();
+    const status = document.getElementById("my-form-status");
+    const data = new FormData(event.target);
+
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            status.innerHTML = "Thanks for your message! I'll get in touch with you soon.";         //TODO: show a popup
+            status.style.color = "#36a75fff";
+            form.reset();
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                    status.innerHTML = "Oops! There was a problem submitting your form";
+                    status.style.color = "#ef4444";
+                }
+            })
+        }
+    }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form";
+        status.style.color = "#ef4444";
+    });
+}
+
+form.addEventListener("submit", handleSubmit);

@@ -15,6 +15,7 @@
     --card-bg: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.1);
     --radius: 16px;
+    --radius-md: 12px;
 
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -34,8 +35,6 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
-    /* Prevents horizontal scrollbar issues */
-    /* Subtle background pattern */
     background-image:
         radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 90% 90%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
@@ -67,7 +66,6 @@ header {
     z-index: 1000;
     padding-top: 20px;
     pointer-events: none;
-    /* Lets you click through empty space */
 }
 
 .nav {
@@ -75,7 +73,8 @@ header {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(10, 10, 10, 0.85);
+    /* Fixed dark mode default */
     backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 100px;
@@ -84,21 +83,6 @@ header {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.nav-link {
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: var(--transition);
-    position: relative;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: #7c3aed;
-    text-shadow: 0 0 12px var(--accent-glow);
 }
 
 .logo {
@@ -112,16 +96,12 @@ header {
 
 .logo-standalone {
     width: 40px;
-    /* Strict width */
     height: 40px;
-    /* Strict height */
     min-width: 40px;
-    /* Prevents squishing */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 12px;
-    /* Space between icon and text */
 }
 
 .logo-standalone svg {
@@ -141,34 +121,58 @@ nav ul {
     gap: 20px;
 }
 
-nav a {
+.nav-link {
     color: var(--muted);
-    font-size: 0.9rem;
+    text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
 }
 
-nav a:hover,
-nav a.active {
-    color: #fff;
-    text-shadow: 0 0 10px var(--accent-glow);
+.nav-link:hover,
+.nav-link.active {
+    color: #8b5cf6;
+    text-shadow: 0 0 12px var(--accent-glow);
 }
 
 .theme-toggle {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
-    color: var(--text);
-    width: 36px;
-    height: 36px;
+    color: var(--muted);
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .theme-toggle:hover {
+    background: #16131c;
     border-color: var(--accent);
-    color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: rotate(15deg) scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover img {
+    transform: rotate(20deg) scale(1.1);
 }
 
 /* --- 5. MAIN CONTAINER --- */
@@ -181,7 +185,7 @@ main {
 
 section {
     padding: 4rem 0;
-    /* Ensures spacing between sections */
+    /* Spacing between sections */
 }
 
 /* Headings */
@@ -204,28 +208,22 @@ section {
     display: none;
 }
 
-/* Removing component to clean up */
-
-/* --- 6. HERO SECTION (Centered) --- */
+/* --- 6. HERO SECTION --- */
 .hero {
     display: flex;
     flex-direction: column;
-    /* Stack vertical */
     align-items: center;
-    /* Center horizontally */
     text-align: center;
     margin-top: 2rem;
     gap: 2rem;
 }
 
-/* Force the visual (Avatar) to the top */
 .hero-visual {
     order: -1;
     display: flex;
     justify-content: center;
 }
 
-/* New Minimal Avatar Style */
 .avatar-card {
     width: 180px;
     height: 180px;
@@ -234,6 +232,23 @@ section {
     border-radius: 50%;
     border: 2px solid var(--accent);
     box-shadow: 0 0 30px var(--accent-glow);
+    overflow: hidden;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .avatar-circle {
@@ -250,13 +265,13 @@ section {
     object-fit: cover;
 }
 
-/* Hide old decorations */
+/* Cleanup unused elements */
 .avatar-orbit,
 .avatar-glow {
     display: none;
 }
 
-/* Hero Text */
+/* Hero Content */
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 1rem;
@@ -264,7 +279,6 @@ section {
 
 .hero-title span {
     display: block;
-    /* New line */
     font-size: 0.5em;
     color: var(--accent);
     margin-top: 0.5rem;
@@ -331,92 +345,305 @@ section {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* --- 7. ABOUT & TIMELINE --- */
-.about-grid {
+/* --- 7. ABOUT SECTION (New Layout) --- */
+.about-container {
     display: grid;
-    grid-template-columns: 1fr;
-    /* Single column layout is safer */
-    gap: 3rem;
+    /* grid-template-columns: 1fr 5fr; */
+    grid-template-columns: 1.3fr 2.7fr;
+    gap: 4rem;
+    align-items: start;
 }
 
-.about-highlights {
+/* Right Side: Bio */
+.bio-text p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.bio-text strong {
+    color: #2d4a69;
+    font-weight: 600;
+}
+
+.bio-text span {
+    color: var(--accent);
+}
+
+/* Right Side: Skills */
+.subsection-header {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 2.5rem 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    /* Reduced minmax from 200px to 160px so they don't stretch too wide */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    /* Reduced gap between cards */
+}
+
+.skill-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    /* COMPACT CHANGE 1: Reduced padding */
+    padding: 1rem;
+
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px -5px rgba(139, 92, 246, 0.2);
+}
+
+.skill-header {
+    font-family: var(--font-heading);
+    color: var(--accent);
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    gap: 0.4rem;
 }
 
-.pill {
-    flex: 1 1 150px;
-    /* Responsive flex basis */
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    padding: 1rem;
-    border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
+.skill-tags span {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: var(--transition);
 }
 
-.pill span:first-child {
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 5px;
+.skill-card:hover .skill-tags span {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.2);
 }
 
-.pill span:last-child {
-    font-size: 0.85rem;
-    color: var(--muted);
+.timeline-wrapper {
+    position: relative;
 }
 
-/* Timeline Styling */
 .timeline {
-    border-left: 2px solid var(--border);
-    margin-left: 10px;
-    padding-left: 30px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2.5rem;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 106px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--border));
+    z-index: 0;
 }
 
 .timeline-item {
     position: relative;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 2px;
 }
 
-/* Timeline Dot */
-.timeline-item::before {
-    content: "";
+/* Date (Left) */
+.timeline-date {
+    width: 85px;
+    /* Fixed width forces text to wrap */
+    text-align: right;
+    /* Aligns text towards the line */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.4;
+    /* Slightly more spacing for wrapped text */
+    flex-shrink: 0;
+    margin-right: 0;
+    padding-right: 10px;
+    padding-left: 0;
+
+    white-space: normal;
+    /* Ensures wrapping is active */
+}
+
+.timeline-date span:first-child {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.timeline-date .month {
+    display: none;
+}
+
+/* Dot Marker */
+.timeline-marker {
     position: absolute;
-    left: -38px;
-    /* Perfectly aligned with border-left line */
-    top: 50%;
-    transform: translateY(-50%);
+    left: 100px;
+    top: 45px;
     width: 14px;
     height: 14px;
-    background: var(--bg);
-    border: 2px solid var(--accent);
     border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    z-index: 2;
+    transition: var(--transition);
 }
 
-.timeline-item:hover {
-    border-color: var(--accent);
+.timeline-item:hover .timeline-marker {
+    background: var(--accent);
+    transform: scale(1.4);
+    box-shadow: 0 0 25px var(--accent);
 }
 
-.timeline-role {
-    font-weight: 700;
+/* 3. The Preview (Right of Line) */
+.timeline-preview {
+    margin-left: 15px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.timeline-item:hover .timeline-preview {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--border);
+}
+
+.timeline-preview h4 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--text);
+}
+
+.timeline-preview .company {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.date-range {
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* 4. THE POPUP WINDOW (Left Side Version) */
+.timeline-popup {
+    position: absolute;
+
+    left: auto;
+    right: 105%;
+
+    top: 12px;
+    width: 300px;
+    background: #0a0a0a;
+    border: 1px solid var(--accent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    z-index: 100;
+
+    opacity: 0;
+    visibility: hidden;
+
+    /* CHANGE 2: Start animation position */
+    transform: translateX(10px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+/* Arrow for the popup (Pointing Right towards the timeline) */
+.timeline-popup::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+
+    /* CHANGE 3: Move arrow to the right edge of the popup */
+    left: auto;
+    right: -7px;
+
+    width: 12px;
+    height: 12px;
+    background: #0a0a0a;
+
+    /* CHANGE 4: Borders on Top and Right create a Right-pointing arrow when rotated */
+    border: 1px solid var(--accent);
+    border-bottom: none;
+    border-left: none;
+
+    transform: rotate(45deg);
+    z-index: 101;
+}
+
+/* Reveal Popup on Hover */
+.timeline-item:hover .timeline-popup {
+    opacity: 1;
+    visibility: visible;
+
+    /* CHANGE 5: Slide slightly to the left */
+    transform: translateX(-15px) scale(1);
+    pointer-events: auto;
+}
+
+/* Popup Content */
+.popup-header {
+    font-family: var(--font-heading);
     color: #fff;
     font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
 }
 
-.timeline-meta {
+.popup-role {
     color: var(--accent);
     font-size: 0.85rem;
-    margin-bottom: 0.5rem;
     text-transform: uppercase;
-    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 600;
+}
+
+.timeline-popup p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* --- 8. RESUME & PROJECTS --- */
@@ -442,12 +669,11 @@ section {
     font-size: 0.8rem;
 }
 
-/* Projects Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Responsive Grid */
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .project-card {
@@ -456,6 +682,7 @@ section {
     border-radius: var(--radius);
     overflow: hidden;
     transition: var(--transition);
+    padding-bottom: 1.23rem;
 }
 
 .project-card:hover {
@@ -505,11 +732,15 @@ section {
     border-radius: 50px;
 }
 
-/* --- 9. CONTACT FORM (Refined) --- */
+/* --- 9. CONTACT FORM --- */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+}
+
+.contact-card p {
+    margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -532,7 +763,6 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Clean Input Style */
 .field input,
 .field textarea {
     width: 100%;
@@ -555,10 +785,10 @@ section {
 .contact-row {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.5rem;
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 20px;
     margin-bottom: 1rem;
     transition: var(--transition);
 }
@@ -629,14 +859,45 @@ body.light-mode .contact-row {
         gap: 10px;
         font-size: 0.8rem;
     }
+}
 
-    .timeline {
-        border-left: none;
-        padding-left: 0;
-        margin-left: 0;
+@media (max-width: 900px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
-    .timeline-item::before {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-marker {
+        left: 23px;
+    }
+
+    .timeline-date {
+        display: none;
+    }
+
+    .timeline-item {
+        gap: 35px;
+    }
+
+    .timeline-popup {
+        position: relative;
+        left: 0;
+        top: 15px;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        box-shadow: none;
+        z-index: 1;
+    }
+
+    .timeline-popup::before {
         display: none;
     }
 }

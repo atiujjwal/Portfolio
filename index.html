@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>atiujjwal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -57,7 +61,11 @@
             type="button"
             aria-label="Toggle light/dark mode"
           >
-            <span id="theme-icon">☾</span>
+            <img
+              id="theme-icon"
+              src="images/light_theme.png"
+              alt="Theme-Toggle"
+            />
           </button>
         </div>
       </div>
@@ -115,94 +123,231 @@
       <section id="about" class="reveal">
         <div class="section-subtitle">About</div>
         <h2 class="section-title">Me</h2>
-        <div class="section-divider"></div>
 
-        <div class="about-grid">
-          <div>
-            <p class="about-text">
-              I'm Ujjwal Kashyap — a backend-focused software engineer currently
-              contributing to products like Hirezy.ai, Conversation.hirezy.ai
-              and Dictera at Tercera Ventures. I architect and build modular,
-              secure, and maintainable services using Node.js, Next.js, Express,
-              JavaScript, TypeScript, Drizzle ORM, and AWS services.
-            </p>
-            <p class="about-text">
-              Across multiple SaaS platforms, I've implemented high-impact
-              features including bulk processing pipelines, API unification into
-              maintainable versions, intelligent AI-driven evaluation workflows,
-              role and permission management, and workflow engines integrated
-              with external systems. My work emphasizes performance,
-              transactional safety, type-secure database operations, and
-              thoughtful error handling.
-            </p>
-            <p class="about-text">
-              Beyond my professional contributions, I enjoy solving complex
-              system design and data flow challenges, exploring DevOps
-              practices, and sharpening problem-solving through active DSA
-              practice. I'm driven to create products that feel seamless to
-              users and scalable for teams.
-            </p>
+        <div class="about-container">
+          <div class="timeline-wrapper">
+            <h3 class="subsection-header">Experience</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <span class="date-range">Jan 2025<br />to<br />Present</span>
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-preview">
+                  <h4>Associate Software Developer</h4>
+                  <span class="company">Tercera Ventures</span>
+                </div>
 
-            <div class="about-highlights">
-              <div class="pill">
-                <span>Languages</span>
-                <span>JavaScript, TypeScript, Python, C++</span>
+                <div class="timeline-popup">
+                  <div class="popup-header">Tercera Ventures</div>
+                  <div class="popup-role">Associate Developer</div>
+                  <p>
+                    Building robust backend services using Node.js, Express, and
+                    TypeScript for SaaS products. Designing scalable REST APIs
+                    and enhancing architecture with modular patterns.
+                    Integrating AWS (S3, Lambda) to optimize performance and
+                    automation. Improving system stability through secure auth
+                    flows, better DB operations, and CI/CD practices.
+                  </p>
+                </div>
               </div>
-              <div class="pill">
-                <span>Backend</span>
-                <span>Node.js, Next.js, Express.js, Flask, REST APIs</span>
+
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <span class="date-range">Jul 2024<br />to<br />Dec 2024</span>
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-preview">
+                  <h4>Node.Js Intern</h4>
+                  <span class="company">Tercera Ventures</span>
+                </div>
+
+                <div class="timeline-popup">
+                  <div class="popup-header">Tercera Ventures</div>
+                  <div class="popup-role">Node.Js Intern</div>
+                  <p>
+                    Contributed to backend feature development for recruitment
+                    and assessment platforms. Implemented REST endpoints, schema
+                    validation, and role-based access logic. Enhanced data flows
+                    with efficient database queries and cloud integrations.
+                    Worked collaboratively in an agile environment delivering
+                    production-ready code.
+                  </p>
+                </div>
               </div>
-              <div class="pill">
-                <span>Databases</span>
-                <span>MySQL, Postgres, MongoDB, Prisma, Drizzle</span>
+
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <span class="date-range"
+                    >May 2024<br />to<br />
+                    Jun 2024</span
+                  >
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-preview">
+                  <h4>Backend Specialization</h4>
+                  <span class="company">Meta (Coursera)</span>
+                </div>
+
+                <div class="timeline-popup">
+                  <div class="popup-header">Meta Certification</div>
+                  <div class="popup-role">Backend Specialization</div>
+                  <p>
+                    Gained hands-on experience in server-side architecture and
+                    API development. Worked on routing, authentication, and data
+                    modeling using relational databases. Practiced performance
+                    optimization and secure backend coding principles. Applied
+                    acquired skills in real backend project scenarios.
+                  </p>
+                </div>
               </div>
-              <div class="pill">
-                <span>Cloud & Tools</span>
-                <span
-                  >AWS (S3, Lambda, Cloudwatch, CodeCommit), Git, GitHub,
-                  Postman</span
-                >
+
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <span class="date-range"
+                    >May 2023 <br />to<br />Jul 2024</span
+                  >
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-preview">
+                  <h4>DSA & Web Dev</h4>
+                  <span class="company">Coding Ninjas</span>
+                </div>
+
+                <div class="timeline-popup">
+                  <div class="popup-header">Coding Ninjas</div>
+                  <div class="popup-role">Full Stack Trainee</div>
+                  <p>
+                    Strengthened DSA proficiency with hands-on coding in real
+                    problem-solving platforms. Built foundational web
+                    development skills across frontend and backend stacks.
+                    Implemented mini-projects focusing on JavaScript, DOM
+                    interactions, and APIs. Developed strong debugging, code
+                    structure, and version control habits.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">
+                  <span class="date-range"
+                    >Sep 2021<br />to<br />
+                    Sep 2025</span
+                  >
+                </div>
+                <div class="timeline-marker"></div>
+                <div class="timeline-preview">
+                  <h4>B.Tech CSE</h4>
+                  <span class="company">KIIT University</span>
+                </div>
+
+                <div class="timeline-popup">
+                  <div class="popup-header">KIIT University</div>
+                  <div class="popup-role">Computer Science Eng.</div>
+                  <p>
+                    Graduated with 8.55 CGPA. Pursued core Computer Science
+                    fundamentals including algorithms and OS concepts. Built
+                    multiple academic and real-world engineering projects with
+                    modern tech stacks. Participated in technical and
+                    extracurricular roles enhancing leadership and teamwork.
+                    Achieved steady academic performance while continuously
+                    learning new technologies.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-role">
-                Associate Software Developer · Tercera Ventures
-              </div>
-              <div class="timeline-meta">July 2024 - Present</div>
-              <div class="about-text">
-                Building core features for SaaS products like Hirezy.ai and
-                Dictera using Node.js, Express, and AWS.
-              </div>
+          <div class="about-content">
+            <div class="bio-text">
+              <p>
+                I'm Ujjwal Kashyap — a backend-focused software engineer
+                currently contributing to products like
+                <span
+                  ><a href="https://www.hirezy.ai/" target="_blank"
+                    >Hirezy.ai</a
+                  ></span
+                >,
+                <span
+                  ><a href="https://conversation.hirezy.ai/" target="_blank"
+                    >Conversation.hirezy.ai</a
+                  ></span
+                >
+                and
+                <span
+                  ><a
+                    href="https://www.hurix.com/blogs/dictera-a-versatile-customization-friendly-ai-assessment-generator/"
+                    target="_blank"
+                    >Dictera</a
+                  ></span
+                >
+                at
+                <span
+                  ><a href="https://www.tercera.ai/" target="_blank"
+                    >Tercera Ventures</a
+                  ></span
+                >. I architect and build modular, secure, and maintainable
+                services using Node.js, Next.js, Express, JavaScript,
+                TypeScript, Drizzle ORM, and AWS services.
+              </p>
+              <p>
+                Across multiple SaaS platforms, I've implemented high-impact
+                features including bulk processing pipelines, API unification
+                into maintainable versions, intelligent AI-driven evaluation
+                workflows, role and permission management, and workflow engines
+                integrated with external systems. My work emphasizes
+                performance, transactional safety, type-secure database
+                operations, and thoughtful error handling.
+              </p>
+              <p>
+                Beyond my professional contributions, I enjoy solving complex
+                system design and data flow challenges, exploring DevOps
+                practices, and sharpening problem-solving through active DSA
+                practice. I'm driven to create products that feel seamless to
+                users and scalable for teams.
+              </p>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-role">
-                Meta: Intro to Back-End Development
+
+            <h3 class="subsection-header">Tech Stack</h3>
+
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-header">
+                  <i class="fas fa-code"></i> Languages
+                </div>
+                <div class="skill-tags">
+                  <span>JavaScript</span>
+                  <span>TypeScript</span>
+                  <span>Python</span>
+                  <span>C++</span>
+                </div>
               </div>
-              <div class="timeline-meta">Coursera Certification · May 2024</div>
-              <div class="about-text">
-                Specialized certification track focusing on server-side
-                development and APIs.
+
+              <div class="skill-card">
+                <div class="skill-header">
+                  <i class="fas fa-server"></i> Backend
+                </div>
+                <div class="skill-tags">
+                  <span>Node.js</span>
+                  <span>Next.js</span>
+                  <span>Express</span>
+                  <span>Flask</span>
+                  <span>REST APIs</span>
+                </div>
               </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-role">DSA & Web Development</div>
-              <div class="timeline-meta">
-                Coding Ninjas Career Camp · 2023 - 2024
+
+              <div class="skill-card">
+                <div class="skill-header">
+                  <i class="fas fa-database"></i> Data & Cloud
+                </div>
+                <div class="skill-tags">
+                  <span>MySQL</span>
+                  <span>Postgres</span>
+                  <span>AWS S3</span>
+                  <span>Lambda</span>
+                  <span>Prisma</span>
+                </div>
               </div>
-              <div class="about-text">
-                Intensive training in Data Structures, Algorithms (Python),
-                HTML, CSS, and JavaScript.
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-role">
-                B.Tech - Computer Science & Engineering
-              </div>
-              <div class="timeline-meta">KIIT University · 2021 - 2025</div>
-              <div class="about-text">CGPA - 8.55/10</div>
             </div>
           </div>
         </div>
@@ -458,11 +603,15 @@
 
       <section id="contact" class="reveal">
         <div class="section-subtitle">Contact</div>
-        <h2 class="section-title">Let's talk</h2>
+        <h2 class="section-title">Get in Touch</h2>
         <div class="section-divider"></div>
 
         <div class="contact-grid">
-          <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/mdkqkjeg"
+            method="POST"
+          >
             <div class="field">
               <label for="name">Name</label>
               <input
@@ -477,7 +626,7 @@
               <label for="email">Email</label>
               <input
                 id="email"
-                name="_replyto"
+                name="email"
                 type="email"
                 placeholder="you@example.com"
                 required
@@ -493,41 +642,60 @@
                 required
               ></textarea>
             </div>
-            <button class="btn btn-primary" type="submit">Send message</button>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                Send Message
+              </button>
+              <p id="my-form-status"></p>
+            </div>
           </form>
 
           <div class="contact-card">
             <p>
-              Prefer email or LinkedIn? Feel free to reach out directly. I’m
-              always happy to talk about interesting projects, collaboration
-              ideas or backend architecture.
+              Prefer email or LinkedIn? Feel free to reach out anytime — I'm always happy to connect about exciting projects, collaboration opportunities, or backend architecture discussions.
             </p>
 
-            <div class="contact-row">
-              <span>Email</span>
-              <a href="mailto:atiujjwalkashyap@gmail.com"
-                >atiujjwalkashyap@gmail.com</a
-              >
-            </div>
+            <div class="contact-rows">
+              <div class="contact-row">
+                <div class="contact-icon"><i class="fa-solid fa-message"></i></div>
+                <div class="contact-detail">
+                  <span>Email :</span>
+                  <a href="mailto:atiujjwalkashyap@gmail.com"
+                    >atiujjwalkashyap@gmail.com</a
+                  >
+                </div>
+              </div>
 
-            <div class="contact-row">
-              <span>GitHub</span>
-              <a href="#" target="_blank"> https://github.com/atiujjwal </a>
-            </div>
+              <div class="contact-row">
+                <div class="contact-icon"><i class="fa-brands fa-github"></i> </div>
+                <div class="contact-detail">
+                  <span>GitHub :</span>
+                  <a href="https://github.com/atiujjwal" target="_blank"
+                    >github.com/atiujjwal</a
+                  >
+                </div>
+              </div>
 
-            <div class="contact-row">
-              <span>LinkedIn</span>
-              <a href="#" target="_blank">
-                https://www.linkedin.com/in/atiujjwal/
-              </a>
+              <div class="contact-row">
+                <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="contact-detail">
+                  <span>LinkedIn :</span>
+                  <a
+                    href="https://www.linkedin.com/in/atiujjwal/"
+                    target="_blank"
+                    >linkedin.com/in/atiujjwal</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <footer>© <span id="year"></span> Ujjwal Kashyap .</footer>
+        <footer>© <span id="year"></span> Ujjwal Kashyap.</footer>
       </section>
     </main>
-
+    <script src="https://kit.fontawesome.com/b96f15d5ec.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
   </body>
 </html>
