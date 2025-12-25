@@ -96,7 +96,7 @@
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">View Projects</a>
             <a
-              href="https://drive.google.com/file/d/1zKex_l44Y2w4zsPwuVgFC2zotXTo8THV/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Beg7sAZg2FQhj5DxyiHkCVv2SoQ598ys/view?usp=sharing"
               class="btn btn-outline btn-primary"
               target="_blank"
               >Download Resume</a
@@ -378,27 +378,21 @@
               <div class="badge">TypeScript</div>
               <div class="badge">Python</div>
               <div class="badge">RESTful APIs</div>
-              <div class="badge">WebSockets</div>
-              <div class="badge">Flask</div>
-              <div class="badge">FastAPI</div>
               <div class="badge">MySQL</div>
               <div class="badge">MongoDB</div>
               <div class="badge">SQL Server</div>
               <div class="badge">Prisma</div>
               <div class="badge">Drizzle</div>
               <div class="badge">AWS (S3, Lambda, CloudWatch)</div>
-              <div class="badge">Azure SQL</div>
               <div class="badge">CI/CD principles</div>
               <div class="badge">Git</div>
               <div class="badge">BitBucket</div>
               <div class="badge">Vercel</div>
               <div class="badge">Supabase</div>
               <div class="badge">System Design</div>
-              <div class="badge">Serverless Architecture</div>
               <div class="badge">Error Handling & Monitoring</div>
               <div class="badge">Secure Authentication</div>
               <div class="badge">Modular MVC Architecture</div>
-              <div class="badge">Data Migration & Schema Management</div>
               <div class="badge">Microservices Concepts</div>
               <div class="badge">Postman</div>
             </div>
@@ -507,7 +501,6 @@
                 <span class="project-tag">MySQL</span>
                 <span class="project-tag">ORM</span>
                 <span class="project-tag">RBAC</span>
-
               </div>
             </div>
           </div>
@@ -552,7 +545,6 @@
                 <span class="project-tag">Node.js</span>
                 <span class="project-tag">AWS lambda</span>
                 <span class="project-tag">AI services</span>
-
               </div>
             </div>
           </div>
@@ -565,11 +557,11 @@
           <div
             class="project-card"
             data-title="pAIse: AI Expense Sharing"
-            data-desc="Implemented the backend architecture for a Splitwise-style expense-management system enhanced with AI-driven automation. Built microservices supporting user authentication, group and expense management, balance calculation, and settlement tracking. Integrated secure data flow using PostgreSQL for transactional records and Redis caching for real-time performance. Contributed to AI-processing pipelines such as receipt OCR parsing and auto-categorization as designed in the system specification . Developed RESTful APIs, async notification workflows, and service-to-service communication through message queues, ensuring scalable performance and strong security compliance throughout the financial workflows."
+            data-desc="pAIse is a next-generation financial utility application designed to solve the chaos of shared expenses using Generative AI."
             data-image="images/banners/pAIse_banner.png"
             data-live="https://paise-apesp.vercel.app/"
             data-github="https://github.com/atiujjwal/pAIse"
-            data-tags="Next.js,TypeScript,Postgres,Prisma,Secure Design,Git,DB Design,RBAC,Vercel,Supabase"
+            data-tags="Next.js,TypeScript,Postgres,Prisma,Upstash Redis,Vercel,Supabase,Google Gemini AI"
           >
             <div class="project-thumb">
               <img
@@ -578,6 +570,7 @@
                 loading="lazy"
               />
             </div>
+
             <button class="card-expand-btn" aria-label="Expand Project">
               <i class="fa-solid fa-expand"></i>
             </button>
@@ -587,14 +580,109 @@
               Implemented the backend architecture for a Splitwise-style
               expense-management system enhanced with AI-driven automation.
               Built microservices supporting user authentication, group and
-              expense management, balance calculation,
+              expense management.
             </p>
+
             <div class="project-meta">
               <div class="project-tags">
                 <span class="project-tag">Next.js</span>
                 <span class="project-tag">Postgres</span>
-                <span class="project-tag">AI features</span>
+                <span class="project-tag">AI Gen</span>
               </div>
+            </div>
+
+            <div class="project-full-description hidden-content">
+              <p>
+                pAIse is a next-generation financial utility application
+                designed to solve the perennial chaos of shared expenses among
+                friends, roommates, and travel groups. While traditional apps
+                like Splitwise act as simple ledgers, pAIse leverages Generative
+                AI to act as an intelligent financial assistant, automating data
+                entry and providing contextual insights into user spending.
+              </p>
+
+              <h3 class="modal-subheading">The Problem & Solution</h3>
+              <p>
+                Managing shared finances is often tedious, requiring manual data
+                entry, complex math for unequal splits, and awkward reminders.
+                pAIse ("pay-ease") eliminates this friction by treating expense
+                tracking as a conversation rather than a data-entry task. Users
+                can interact with the app naturally—through voice commands,
+                images, or text—while the system handles the complex logic of
+                debt simplification and balance tracking in the background.
+              </p>
+
+              <h3 class="modal-subheading">Key Innovations & AI Integration</h3>
+              <p>
+                The core differentiator of pAIse is its deep integration of
+                Google’s Gemini AI models to streamline user interaction:
+              </p>
+              <ul class="modal-list">
+                <li>
+                  <strong>Voice-Powered Entry:</strong> Users can simply speak
+                  naturally (e.g., "I paid 500 for lunch with Bob, split
+                  equally"). The app captures the audio, transcribes it, and
+                  extracts structured data to create the transaction
+                  automatically.
+                </li>
+                <li>
+                  <strong>Smart Receipt Scanning:</strong> An integrated OCR
+                  system analyzes photos of physical receipts, identifying line
+                  items and totals to populate expense forms instantly.
+                </li>
+                <li>
+                  <strong>Context-Aware AI Chatbot:</strong> A dual-mode chatbot
+                  serves as both a support agent and a financial analyst. It
+                  uses RAG (Retrieval-Augmented Generation) to answer feature
+                  queries and securely accesses personal financial contexts for
+                  authenticated users.
+                </li>
+              </ul>
+
+              <h3 class="modal-subheading">
+                Technical Architecture & Cloud Infrastructure
+              </h3>
+              <p>
+                pAIse is architected for performance, scalability, and security
+                using a modern serverless stack deployed on Free Tier services
+                to showcase high-value engineering with zero initial cost:
+              </p>
+              <ul class="modal-list">
+                <li>
+                  <strong>Frontend & Edge:</strong> Built with Next.js 14 (App
+                  Router) and TypeScript, deployed on Vercel's Free Tier,
+                  leveraging the global Edge Network for low-latency
+                  performance.
+                </li>
+                <li>
+                  <strong>Database & Storage:</strong> The backend relies on
+                  Supabase (PostgreSQL). It provides robust relational data
+                  persistence, utilizing CUIDs for security and complex schemas
+                  for debt handling.
+                </li>
+                <li>
+                  <strong>Caching & Rate Limiting:</strong> Upstash Redis is
+                  implemented at the edge. It effectively handles caching and
+                  strictly enforces rate limits, protecting the AI endpoints
+                  from abuse and DDoS attacks.
+                </li>
+                <li>
+                  <strong>Security-First Design:</strong> Implements a
+                  "Defense-in-Depth" strategy, including strict HTTP Security
+                  Headers (HSTS, CSP), Zod validation schemas, and secure,
+                  HTTP-only cookies.
+                </li>
+              </ul>
+
+              <h3 class="modal-subheading">Impact</h3>
+              <p>
+                pAIse transforms a mundane administrative chore into a seamless,
+                intelligent experience. By combining rigorous full-stack
+                development practices with a sophisticated, zero-cost cloud
+                infrastructure (Vercel, Supabase, Upstash), this project
+                showcases my ability to build secure, scalable, and user-centric
+                software that solves real-world problems effectively.
+              </p>
             </div>
           </div>
 
@@ -633,8 +721,6 @@
                 <span class="project-tag">Python</span>
                 <span class="project-tag">Flask</span>
                 <span class="project-tag">Data Science</span>
-
-
               </div>
             </div>
           </div>

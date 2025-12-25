@@ -62,7 +62,7 @@ function applyTheme(mode) {
         const prefersLight =
             window.matchMedia &&
             window.matchMedia("(prefers-color-scheme: light)").matches;
-        mode = prefersLight ? "light" : "dark";
+        mode = prefersLight ? "dark" : "light";
     }
     applyTheme(mode);
 })();
@@ -114,8 +114,6 @@ if (form) {
     form.addEventListener("submit", handleSubmit);
 }
 
-// --- PROJECT MODAL LOGIC (New) ---
-
 const modal = document.getElementById("project-modal");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 const modalTitle = document.getElementById("modal-title");
@@ -125,24 +123,28 @@ const modalTags = document.getElementById("modal-tags");
 const modalLiveLink = document.getElementById("modal-live-link");
 const modalGithubLink = document.getElementById("modal-github-link");
 
-// 1. Select all triggers (Expand Buttons)
 const expandButtons = document.querySelectorAll(".card-expand-btn");
 
 function openModal(card) {
-    // Get data from data attributes
     const title = card.getAttribute("data-title");
-    const desc = card.getAttribute("data-desc");
     const image = card.getAttribute("data-image");
     const live = card.getAttribute("data-live");
     const github = card.getAttribute("data-github");
     const tags = card.getAttribute("data-tags");
 
-    // Populate Modal
+    // 2. Check for Rich HTML Content vs. Simple Text
+    const fullDescElement = card.querySelector(".project-full-description");
+    const simpleDesc = card.getAttribute("data-desc");
+
     modalTitle.textContent = title;
-    modalDesc.textContent = desc;
     modalImage.src = image;
 
-    // Handle Tags (CSV string to HTML)
+    if (fullDescElement) {
+        modalDesc.innerHTML = fullDescElement.innerHTML;
+    } else {
+        modalDesc.textContent = simpleDesc;
+    }
+
     modalTags.innerHTML = "";
     if (tags) {
         tags.split(",").forEach(tag => {
@@ -153,7 +155,6 @@ function openModal(card) {
         });
     }
 
-    // Handle Links (Show/Hide logic)
     if (live && live !== "#" && live.trim() !== "") {
         modalLiveLink.href = live;
         modalLiveLink.classList.remove("hidden");
@@ -168,7 +169,6 @@ function openModal(card) {
         modalGithubLink.classList.add("hidden");
     }
 
-    // Show Modal & Disable Scroll
     if (modal) {
         modal.classList.add("active");
         modal.setAttribute("aria-hidden", "false");

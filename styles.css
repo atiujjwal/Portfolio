@@ -805,7 +805,7 @@ section {
     border-bottom: 1px solid var(--border);
     padding: 12px 0;
     font-size: 1rem;
-    color: var(--text); /* Ensures text is visible in light/dark mode */
+    color: var(--text);
     font-family: var(--font-body);
     transition: var(--transition);
     border-radius: 0;
@@ -816,7 +816,7 @@ section {
     outline: none;
     border-bottom-color: var(--accent);
     background: linear-gradient(to bottom, transparent, rgba(139, 92, 246, 0.05));
-    padding-left: 10px; /* Subtle shift on focus */
+    padding-left: 10px;
 }
 
 .contact-row {
@@ -1024,6 +1024,50 @@ body.light-mode .modal-content {
 /* Utility to hide buttons if link is empty */
 .hidden {
     display: none !important;
+}
+
+.hidden-content {
+    display: none;
+}
+
+.modal-description-scroll h3.modal-subheading {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--font-heading);
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+}
+
+.modal-description-scroll ul.modal-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+}
+
+.modal-description-scroll ul.modal-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--muted);
+}
+
+.modal-description-scroll ul.modal-list li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.modal-description-scroll strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.modal-description-scroll p {
+    margin-bottom: 1rem;
 }
 
 /* --- 12. RESPONSIVE --- */
